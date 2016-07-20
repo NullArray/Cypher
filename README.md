@@ -11,7 +11,9 @@ Finally Cypher will write out a README note and the client ID which would have t
 #To do
 
 [+]Extensive and multi-platform testing.
+
 [+]Write decrypting module.
+
 [+]Designing and developing a more secure C&C mechanism.
 
 #Want to contribute?
