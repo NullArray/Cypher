@@ -123,7 +123,7 @@ if __name__=="__main__":
 	
 	try:
 		selectfiles()
-	except exception as e:
+	except Exception as e:
 		pass
 	
 		
