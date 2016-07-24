@@ -18,7 +18,7 @@ Finally Cypher will write out a README note and the client ID which would have t
 
 #Want to contribute?
 
-I'd be more than willing to collaborate on this and if you wish to contribute feel free to open an issue and we may discuss the details and/or ideas we could work on and you might want to suggest.
+I'd be more than willing to collaborate on this and if you wish to contribute feel free to open an issue or a pull requesrt and we may discuss the details and/or ideas we could work on and you might want to suggest.
 
 
 
