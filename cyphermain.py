@@ -111,10 +111,10 @@ def note():
 	# outdir = os.getenv('USERNAME') + "\\Desktop"
 	
 	outdir = os.getenv('HOME') + "/Desktop/"
-	outfile = outdir + "README" + ID
+	outfile = outdir + "README"
 	
 	handler = open(outputfile, 'w')
-	handler.write(outfile)
+	handler.write(outfile, ID)
 	handler.close()
 	
 if __name__=="__main__":
