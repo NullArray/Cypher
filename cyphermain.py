@@ -1,6 +1,6 @@
 # Cypher is a work in progress, as such this is an Alpha release of the encryption
 # module, for reporting bugs feel free to open an issue or should you wish to 
-# collaborate on this pull requests are welcomed as well.
+# collaborate on this, pull requests are welcomed as well.
 
 import os
 import sys
