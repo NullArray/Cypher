@@ -17,7 +17,13 @@ from Crypto.Cipher import AES
 from Crypto.PublicKey import RSA
 from multiprocessing import Pool
 
-ID = ''
+
+# Function to generate our client ID
+def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
+	return ''.join(random.choice(chars) for _ in range(size))
+
+
+ID = gen_client_ID(12)
 key = RSA.generate(2048)
 exKey = RSA.exportKey('PEM')
 
@@ -33,10 +39,6 @@ else:
 	except:
 		pass
 
-# Function to generate our client ID
-def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
-	global ID
-	ID = ''.join(random.choice(chars) for _ in range(size))
 
 
 def send_ID_Key():
