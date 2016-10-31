@@ -9,18 +9,13 @@ from base64 import b64decode
 with open('privkey', 'r') as keyfile:
 	keyData = keyfile.read().replace('\n', '')
 
+	
 keyDER = b64decode(keyData)	
 key = RSA.importKey(keyDER)
 
 
 def decrypt_file(key, in_filename, out_filename=None, chunksize=24*1024):
-    """ Decrypts a file using AES (CBC mode) with the
-        given key. Parameters are similar to encrypt_file,
-        with one difference: out_filename, if not supplied
-        will be in_filename without its last extension
-        (i.e. if in_filename is 'aaa.zip.enc' then
-        out_filename will be 'aaa.zip')
-    """
+
     if not out_filename:
         out_filename = os.path.splitext(in_filename)[0]
 
