@@ -1,5 +1,6 @@
 import os
 import sys
+import struct
 
 from multiprocessing import Pool
 from Crypto.PublicKey import RSA
