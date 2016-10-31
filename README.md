@@ -22,7 +22,7 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
 
 [+]Extensive and multi-platform testing.
 
-~~[+]Write decrypting module.
+~~[+]Write decrypting module.~~
 
 [+]Designing and developing a more secure C&C mechanism.
 
