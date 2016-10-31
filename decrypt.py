@@ -2,9 +2,9 @@ import os
 import sys
 import struct
 
-from multiprocessing import Pool
-from Crypto.PublicKey import RSA
 from base64 import b64decode
+from Crypto.PublicKey import RSA
+from multiprocessing import Pool
 
 
 with open('privkey', 'r') as keyfile:
