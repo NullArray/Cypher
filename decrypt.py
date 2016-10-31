@@ -37,7 +37,6 @@ def decrypt_file(key, in_filename, out_filename=None, chunksize=24*1024):
 def single_arg_decrypt_file(in_filename):
     decrypt_file(key, in_filename)
 
-
 def select_files():
     
     ext = ".crypt"
