@@ -24,6 +24,8 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
 
 ~~[+]Write decrypting module.~~
 
+[+]Functionality to restore MBR
+
 [+]Designing and developing a more secure C&C mechanism.
 
 #Want to contribute?
