@@ -3,10 +3,11 @@ import sys
 import struct
 
 from base64 import b64decode
+from Crypto.Cipher import AES
 from Crypto.PublicKey import RSA
 from multiprocessing import Pool
 
-
+# Read in and decode keyfile
 with open('privkey', 'r') as keyfile:
 	keyData = keyfile.read().replace('\n', '')
 
@@ -16,6 +17,7 @@ key = RSA.importKey(keyDER)
 
 def decrypt_file(key, in_filename, out_filename=None, chunksize=24*1024):
 
+    # Split .crypt extension to restore file format
     if not out_filename:
         out_filename = os.path.splitext(in_filename)[0]
 
@@ -30,7 +32,8 @@ def decrypt_file(key, in_filename, out_filename=None, chunksize=24*1024):
                 if len(chunk) == 0:
                     break
                 outfile.write(decryptor.decrypt(chunk))
-
+	    
+	    # Truncate file to original size
             outfile.truncate(origsize)
 
 
@@ -39,7 +42,7 @@ def single_arg_decrypt_file(in_filename):
 
 
 def select_files():
-    
+    # Files to be decrypted are identified by .crypt extension
     ext = ".crypt"
            
     files_to_dec = []
@@ -47,10 +50,11 @@ def select_files():
         for file in files:
             if file.endswith(str(ext)):
                 files_to_dec.push(os.path.join(root, file))
-
+    
+    # Parralelize execution of decrypting function over four sub processes 
     pool = Pool(processes=4)
     pool.map(single_arg_decrypt_file, files_to_dec)
 
 
 if __name__=="__main__":
-	select_files()
+    select_files()
