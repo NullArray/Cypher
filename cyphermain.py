@@ -151,7 +151,6 @@ def note():
 	handler.close()
 	
 if __name__=="__main__":
-	gen_client_ID()
 	send_ID_Key()
 	
 	try:
