@@ -27,8 +27,8 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
 * Functionality to restore MBR
 
 * Designing and developing a more secure C&C mechanism.
-1. Possibly HTTP in favor of SMTP and;
-2. Web App to dynamically provide encryption keys in favor of local generation
+1.  Possibly HTTP in favor of SMTP and;
+2.  Web App to dynamically provide encryption keys in favor of local generation
 
 #Want to contribute?
 
