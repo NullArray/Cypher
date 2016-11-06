@@ -20,13 +20,13 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
 
 #To do
 
-*Extensive and multi-platform testing.
+* Extensive and multi-platform testing.
 
-*~~Write decrypting module.~~
+* ~~Write decrypting module.~~
 
-*Functionality to restore MBR
+* Functionality to restore MBR
 
-*Designing and developing a more secure C&C mechanism.
+* Designing and developing a more secure C&C mechanism.
 
 1. Possibly HTTP in favor of SMTP and;
 2. Web App to dynamically provide encryption keys in favor of local generation
