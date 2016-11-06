@@ -22,7 +22,7 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
 
 *Extensive and multi-platform testing.
 
-*~~[+]Write decrypting module.~~
+*~~Write decrypting module.~~
 
 *Functionality to restore MBR
 
