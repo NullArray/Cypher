@@ -15,7 +15,7 @@ in order to retrieve the proper decrypting binary and key respectively.
 
 #Update
 
-The lastest version of the encryption module adds bootlocker functionality by attempting to override the MBR with a custom bootloader.
+The lastest version of the encryption module adds bootlocker functionality by attempting to overwrite the MBR with a custom bootloader.
 Shoutout to NO-OP for his contribution in this regard. I've added the source code together with boot.bin for illustrative purposes.  
 
 #To do
