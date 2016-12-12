@@ -15,7 +15,9 @@ in order to retrieve the proper decrypting binary and key respectively.
 
 #Update
 
-I am currently setting up a web application as an alternative C&C mechanism, in keeping with the Python theme of this project i am employing the Django framework for the web app. Commits will be pushed to the repo in due time.
+I have added some logic to have the ransomware log in to the web app with the Mechanize lib. As of yet functionality to retrieve a key from the web app and to post the client ID have not been implemented. Therefore SMTP is still available and perhaps in the near future optional depending on the preference of the operator.
+
+I am setting up a web application as an alternative C&C mechanism, in keeping with the Python theme of this project i am employing the Django framework for the web app. Commits will be pushed to the repo in due time.
 
 The lastest version of the encryption module adds bootlocker functionality by attempting to overwrite the MBR with a custom bootloader.
 Shoutout to NO-OP for his contribution in this regard. I've added the source code together with boot.bin for illustrative purposes.  
