@@ -23,7 +23,7 @@ from multiprocessing import Pool
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
-# If SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
+# Set `SMTP` to False in order to force the program to use HTTP and it's own C&C infrastructure. 
 SMTP = True
 ID = gen_client_ID(12)
 
