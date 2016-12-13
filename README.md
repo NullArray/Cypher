@@ -5,10 +5,9 @@ It is a work in progress as of yet and i will be releasing updates periodically 
 
 #Operation
 
-Cypher operates by generating a unique client ID for each box that has been infected. The client ID and encryption key will be sent via email
-to a gmail adress by leveraging python's SMTP lib. After Cypher has enumerated the files we wish to encrypt
-the multiprocessing and PyCrypto libs are employed to do the actual encrypting.
-I opted to use the multiprocessing lib to speed up the encryption process.
+Cypher operates by generating a unique client ID for each box that has been infected. The client ID and encryption key will be sent via email to a gmail adress by leveraging python's SMTP lib. The new version of Cypher will give the operator the choice to pick between gmail and the C&C infrastructure that comes with the finished project, namely a web application to generate and store key pairs together with client IDs. If the operator chooses to employ the Cypher web app the ransomware will contact via HTTP by leveraging the Mechanize lib.
+
+After Cypher has enumerated the files we wish to encrypt the multiprocessing and PyCrypto libs are employed to do the actual encrypting. I opted to use the multiprocessing lib to speed up the encryption process.
 
 Finally Cypher will write out a README note and the client ID which would have to be relayed to the operator
 in order to retrieve the proper decrypting binary and key respectively.
