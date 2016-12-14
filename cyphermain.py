@@ -23,7 +23,7 @@ from multiprocessing import Pool
 def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
-# Set `SMTP` to False in order to force the program to use HTTP and it's own C&C infrastructure. 
+# Set `SMTP` to False in order to force the program to use HTTP and it's own C&C Web App. 
 SMTP = True
 ID = gen_client_ID(12)
 
