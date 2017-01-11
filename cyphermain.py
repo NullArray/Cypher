@@ -166,8 +166,8 @@ def note():
 	outdir = os.getenv('HOME') + "/Desktop/"
 	outfile = outdir + "README"
 	
-	handler = open(outputfile, 'w')
-	handler.write(outfile, ID)
+	handler = open(outfile, 'w')
+	handler.write(readme, ID)
 	handler.close()
 	
 if __name__=="__main__":
