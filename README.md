@@ -1,9 +1,9 @@
-#Cypher
+# Cypher
 
 Cypher is a proof of concept ransomware which implements the PyCrpto module and uses gmail(Currently) as a simple command and control server.
 It is a work in progress as of yet and i will be releasing updates periodically depending on the amount of time i have to work on the project.
 
-#Operation
+# Operation
 
 Cypher operates by generating a unique client ID for each box that has been infected. The client ID and encryption key will be sent via email to a gmail adress by leveraging python's SMTP lib. The new version of Cypher will give the operator the choice to pick between gmail and the C&C infrastructure that comes with the finished project, namely a web application to generate and store key pairs together with client IDs. If the operator chooses to employ the Cypher web app the ransomware will contact via HTTP by leveraging the Mechanize lib.
 
@@ -12,7 +12,7 @@ After Cypher has enumerated the files we wish to encrypt the multiprocessing and
 Finally Cypher will write out a README note and the client ID which would have to be relayed to the operator
 in order to retrieve the proper decrypting binary and key respectively.
 
-#Update
+# Update
 
 I have added some logic to have the ransomware log in to the web app with the Mechanize lib. As of yet functionality to retrieve a key from the web app and to post the client ID have not been implemented. SMTP is still available and in the near future optional depending on the preference of the operator.
 
@@ -21,7 +21,7 @@ I am setting up a web application as an alternative C&C mechanism, in keeping wi
 The lastest version of the encryption module adds bootlocker functionality by attempting to overwrite the MBR with a custom bootloader.
 Shoutout to NO-OP for his contribution in this regard. I've added the source code together with boot.bin for illustrative purposes.  
 
-#To do
+# To do
 
 * Extensive and multi-platform testing.
 
@@ -33,7 +33,7 @@ Shoutout to NO-OP for his contribution in this regard. I've added the source cod
   * ~~Possibly HTTP in favor of SMTP~~ and;
   * Web App to dynamically provide encryption keys in favor of local generation
 
-#Want to contribute?
+# Want to contribute?
 
 I'd be more than willing to collaborate on this and if you wish to contribute feel free to open an issue or a pull request and we may discuss the details and/or ideas we could work on and you might want to suggest.
 
