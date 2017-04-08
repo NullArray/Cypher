@@ -41,4 +41,10 @@ I'd be more than willing to collaborate on this and if you wish to contribute fe
 
 ![alt tag](https://pbs.twimg.com/media/CfJsdtPWsAEc-Gs.jpg)
  
+### Note 
 
+Development of C&C web application has been postponed for the time being. If you want to get creative i would recommend [this fork](https://github.com/NullArray/Ransom) or [this original](https://github.com/filtration/Ransom) web application written in PHP with Laravel by my friend [Filtration](https://github.com/filtration). It is compatible with Cypher with a little tinkering.
+
+Also, if you have any pull requests to submit please feel free to do so. Open Source collaboration on this Ransomware remains to be of import to me.
+
+Thanks.
