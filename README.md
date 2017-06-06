@@ -18,7 +18,7 @@ I have added some logic to have the ransomware log in to the web app with the Me
 
 I am setting up a web application as an alternative C&C mechanism, in keeping with the Python theme of this project i am employing the Django framework for the web app. Commits will be pushed to the repo in due time.
 
-The lastest version of the encryption module adds bootlocker functionality by attempting to overwrite the MBR with a custom bootloader.
+The latest version of the encryption module adds bootlocker functionality by attempting to overwrite the MBR with a custom bootloader.
 Shoutout to NO-OP for his contribution in this regard. I've added the source code together with boot.bin for illustrative purposes.  
 
 # To do
