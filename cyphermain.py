@@ -33,7 +33,7 @@ if sys.platform == 'linux2' and gp.getuser() == 'root':
 		os.system("dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass	
-else:			
+elif sys.platform == 'linux2':			
 	try:
 		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
