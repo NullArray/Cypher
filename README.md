@@ -1,7 +1,7 @@
 # Cypher
 
 Cypher is a proof of concept ransomware which implements the PyCrypto module and uses gmail(Currently) as a simple command and control server.
-It is a work in progress as of yet and i will be releasing updates periodically depending on the amount of time i have to work on the project.
+It is a work in progress as of yet and i will be releasing updates periodically depending on a couple of factors
 
 # Operation
 
